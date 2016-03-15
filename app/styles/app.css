@@ -1,0 +1,61 @@
+.sidebar {
+  position: absolute;
+  width: 20%;
+  top: 0;
+  bottom: 0;
+}
+
+h3, a, p {
+  font-family: 'Black Ops One', cursive;
+}
+
+.selectable {
+  cursor: pointer;
+}
+
+.tabs {
+  padding-top: 50px;
+}
+
+.tab-content {
+  min-height: 500px;
+}
+
+#prf-canvas{
+position:absolute;
+top:500px;
+	height: 500px;
+  	width:95%;
+  	margin: 25px;
+
+	}
+
+//D3 stuff
+body {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.leaflet-exhibit {
+  margin-top: 15px;
+}
+
+.stream-exhibit-buttons {
+  margin-top: 15px;
+}

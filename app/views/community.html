@@ -1,0 +1,131 @@
+
+<h3 ng-show="community.study">{{community.study.title()}}</h3>
+
+<div class="row">
+  <!-- <div class="col-md-3">
+
+    <div class="btn-group">
+      <label class="btn btn-default" ng-model="dataset" uib-btn-radio="'streams'">Streams</label>
+      <label class="btn btn-default" ng-model="dataset" uib-btn-radio="'hydrology'">Hydrology</label>
+    </div>
+
+    <hr>
+
+    <p ng-repeat="stream in community.keys(community.streams)" class="selectable" ng-click="community.selected = community.streams[stream]">{{stream}}</p>
+  </div> -->
+
+  <div class="col-md-12">
+    <uib-tabset class="tabs">
+      <uib-tab class="tab" select="community.streams()">
+        <uib-tab-heading>
+          <!-- <i class="glyphicon glyphicon-bell"></i> -->
+          Streams
+        </uib-tab-heading>
+
+        <div class="col-md-3">
+          <p ng-repeat="stream in community.keys(community.streams)" class="selectable" ng-click="community.selected = community.streams[stream]">{{stream}}</p>
+        </div>
+
+        <div class="col-md-9">
+
+          <div class="btn-group stream-exhibit-buttons">
+            <label class="btn btn-default" ng-model="community.exhibit" uib-btn-radio="'profile'">Profile</label>
+            <label class="btn btn-default" ng-model="community.exhibit" uib-btn-radio="'map'">Map</label>
+          </div>
+
+          <hr>
+
+          <profile ng-if="community.profile" ng-hide="community.mapShown" data="community.profile"></profile>
+
+          <leaflet class="leaflet-exhibit" ng-if="community.mapShown" id="mymap" defaults="defaults" lf-center="center" geojson="community.geojson" bounds="community.bounds" height="480px" width="90%"></leaflet>
+        </div>
+
+      </uib-tab>
+
+      <uib-tab class="tab" select="community.study()">
+        <uib-tab-heading >
+          <!-- <i class="glyphicon glyphicon-bell"></i> -->
+          Study
+        </uib-tab-heading>
+
+        <dl class="dl-horizontal">
+          <dt>Study Identifier</dt>
+          <dd>{{community.study.DFIRM_ID}}</dd>
+
+          <dt>Version Identifier</dt>
+          <dd>{{community.study.VERSION_ID}}</dd>
+
+          <dt>Study Prefix</dt>
+          <dd>{{community.study.STUDY_PRE}}</dd>
+
+          <dt>Study Name</dt>
+          <dd>{{community.study.STUDY_NM}}</dd>
+
+          <dt>State Name</dt>
+          <dd>{{community.study.STATE_NM}}</dd>
+
+          <dt>County Name</dt>
+          <dd>{{community.study.CNTY_NM}}</dd>
+
+          <dt>Political Jurisdiction Type</dt>
+          <dd>{{community.study.JURIS_TYP}}</dd>
+
+          <dt>Largest Panel Number</dt>
+          <dd>{{community.study.LG_PAN_NO}}</dd>
+
+          <dt>Horizontal Datum</dt>
+          <dd>{{community.study.H_DATUM}}</dd>
+
+          <dt>Vertical Datum</dt>
+          <dd>{{community.study.V_DATUM}}</dd>
+
+          <dt>Map Projection</dt>
+          <dd>{{community.study.PROJECTION}}</dd>
+
+          <dt>Projection Zone</dt>
+          <dd>{{community.study.PROJ_ZONE}}</dd>
+
+          <dt>Projection Unit</dt>
+          <dd>{{community.study.PROJ_UNIT}}</dd>
+
+          <dt>Secondary Projection</dt>
+          <dd>{{community.study.PROJ_SECND}}</dd>
+
+          <dt>Secondary Projection Unit</dt>
+          <dd>{{community.study.PROJ_SUNIT}}</dd>
+
+          <dt>Secondary Projection Zone</dt>
+          <dd>{{community.study.PROJ_SZONE}}</dd>
+
+          <dt>Countywide Flood Risk Project</dt>
+          <dd>{{community.study.CW_TF}}</dd>
+
+          <dt>Retrofit</dt>
+          <dd>{{community.study.RTROFT_TF}}</dd>
+
+          <dt>Metadata File Name</dt>
+          <dd>{{community.study.META_NM}}</dd>
+
+          <dt>FIS Report</dt>
+          <dd>{{community.study.FIS_NM}}</dd>
+
+          <dt>Index Effective Date</dt>
+          <dd>{{community.study.INDX_EFFDT}}</dd>
+
+          <dt>FIRM Database last updated</dt>
+          <dd>{{community.study.DBREV_DT}}</dd>
+
+          <dt>Countywide Vertical Datum</dt>
+          <dd>{{community.study.AVG_CFACTR}}</dd>
+        </dl
+
+
+
+      </uib-tab>
+
+
+    </uib-tabset>
+  </div>
+
+  <!-- <pre>{{community.selected | json}}</pre> -->
+</div>

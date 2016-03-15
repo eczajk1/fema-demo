@@ -1,0 +1,4 @@
+<div class="col-md-12" ng-controller='SidebarCtrl as sb'>
+  <p class="text-center selectable" ng-hide="sb.communities" ng-repeat="(state, communities) in sb.study_info" ng-click="sb.state(communities)">{{state}}</p>
+  <p class="text-center selectable" ng-show="sb.communities" ng-repeat="community in sb.communities | orderBy: 'CNTY_NM'" ng-click="sb.community(community)">{{(community.STUDY_PRE ? community.STUDY_PRE + ' ' : '') + community.STUDY_NM}}</p>
+</div>
